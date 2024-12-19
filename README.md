@@ -41,7 +41,8 @@ The application is designed to streamline the process of form validation, ensuri
    - Ensure the `_InitializeForms` method is called during page load to attach validation logic to forms dynamically.
    To your HTML template with the form, add this.
    ```html
-    <script>
+   <script src="{% static 'dist/forms.bundle.js' %}"></script> 
+   <script>
     // fv (formsvalidator) is exported from forms.bundle.js
     window.addEventListener("load", () => {
         let ignoredClasses = {{ form_validator.ignored_classes|safe }}; // add more classes that represent forms you want this script to ignore.

@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: django-forms-frontend-validation
-Version: 1.0.0
+Version: 1.0.1
 Summary: A Django app for front-end form validation
-Home-page: https://github.com/andrew-kyle92/django-frontend-validation
+Home-page: https://github.com/andrew-kyle92/django-forms-frontend-validation
 Author: Andrew Kyle
 Author-email: andrew.kyle92@yahoo.com
 License: MIT
@@ -56,7 +56,8 @@ The application is designed to streamline the process of form validation, ensuri
    - Ensure the `_InitializeForms` method is called during page load to attach validation logic to forms dynamically.
    To your HTML template with the form, add this.
    ```html
-    <script>
+   <script src="{% static 'dist/forms.bundle.js' %}"></script> 
+   <script>
     // fv (formsvalidator) is exported from forms.bundle.js
     window.addEventListener("load", () => {
         let ignoredClasses = {{ form_validator.ignored_classes|safe }}; // add more classes that represent forms you want this script to ignore.

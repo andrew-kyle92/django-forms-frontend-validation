@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-forms-frontend-validation',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(exclude=['core*']),
     include_package_data=True,
     license='MIT',  # Use the license that applies to your project
@@ -11,7 +11,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Andrew Kyle',
     author_email='andrew.kyle92@yahoo.com',
-    url='https://github.com/andrew-kyle92/django-frontend-validation',
+    url='https://github.com/andrew-kyle92/django-forms-frontend-validation',
     classifiers=[
         'Framework :: Django',
         'Programming Language :: Python',
