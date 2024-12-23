@@ -31,9 +31,11 @@ The application is designed to streamline the process of form validation, ensuri
         'formvalidator',
       ]
       ```
-   - Configure the following variables to customize the behavior.
+   - Configure the following variables to customize the behavior, after importing the form settings.
       ```python
-      IGNORED_CLASSES = ['example-class', 'example-class-2', ...]
+     from formvalidator.settings import * 
+     
+     IGNORED_CLASSES = ['example-class', 'example-class-2', ...]
       IGNORE_VALIDATION = ['example-ignore-validation', ...]
       VALIDATE_ONLY_ON_SUBMIT = ['all']  # Options: "__all__", specific class names, or leave empty.
       ```
