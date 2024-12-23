@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.3] - 2024-12-23
+### Changed
+- Changed the manifest to only include the `static/dist` contents
+
 ## [1.0.2] - 2024-12-23
 ### Added
 - Added more sample code to the documentation.
