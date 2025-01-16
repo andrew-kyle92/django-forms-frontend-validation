@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: django-forms-frontend-validation
-Version: 1.0.3
+Version: 1.0.4
 Summary: A Django app for front-end form validation
 Home-page: https://github.com/andrew-kyle92/django-forms-frontend-validation
 Author: Andrew Kyle
