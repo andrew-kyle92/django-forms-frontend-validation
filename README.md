@@ -19,11 +19,13 @@ The application is designed to streamline the process of form validation, ensuri
   - Includes CSRF token management for secure AJAX-based form submissions.
 
 ## Usage
+### Installation
+1. Install the Django project
+    ```cmd
+   pip install django-frontend-forms-validation
+   ```
 ### Setting Up
-1. Include Required Components:
-   - Include the JavaScript files in your project to enable client-side functionality.
-   - Ensure `form_utils.py` is imported and accessible in your Django app.
-2. Define Settings in settings.py
+1. Define Settings in settings.py
    - Add `formvalidator` to installed apps.
       ```python
       INSTALLED_APPS = [
@@ -39,7 +41,7 @@ The application is designed to streamline the process of form validation, ensuri
       IGNORE_VALIDATION = ['example-ignore-validation', ...]
       VALIDATE_ONLY_ON_SUBMIT = ['all']  # Options: "__all__", specific class names, or leave empty.
       ```
-3. Initial Forms:
+2. Initial Forms:
    - Ensure the `_InitializeForms` method is called during page load to attach validation logic to forms dynamically.
    To your HTML template with the form, add this.
    ```html
@@ -59,7 +61,7 @@ The application is designed to streamline the process of form validation, ensuri
     });
    </script>
    ```
-4. Server-Side Context:
+3. Server-Side Context:
    - Use the `FormsValidator` class to pass configuration to templates:
    ```python
     from formvalidator.form_utils import FormsValidator
@@ -72,3 +74,39 @@ The application is designed to streamline the process of form validation, ensuri
         }    
         return render(request, 'my_template.html', context)
    ```
+4. Add `div` Groups to the HTML Form:
+   - The JavaScript in this project relies on each form field being wrapped inside an outer div with the classname of ```form-group```.
+   - It helps set apart each input from other inputs within the form.
+   - Here is an example of the setup:
+   ```html
+    <form ...>
+        {% csrf_token %}
+   
+        <div class="form-group">
+            <label for="field1">Field 1</label>
+            <input type="text" name="field1">
+        </div>
+   
+        <div class="form-group">
+            <label for="field2">Field 1</label>
+            <input type="text" name="field2">
+        </div>
+        
+        <-- Adding the rest of the form groups below -->
+        ...
+    </form>
+    ```
+   - If iterating through each form input using the ```form``` context variable:
+    ```html
+    <form ...>
+        {% csrf_token %}
+        
+        <-- iterating through each form field -->
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.name }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+    </form>
+    ```

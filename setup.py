@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-forms-frontend-validation',
-    version='1.0.4',
+    version='1.0.6',
     packages=find_packages(exclude=['core*']),
     include_package_data=True,
     license='MIT',  # Use the license that applies to your project

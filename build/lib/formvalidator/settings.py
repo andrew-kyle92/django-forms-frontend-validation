@@ -11,4 +11,4 @@ IGNORE_VALIDATION = [] + IGNORED_CLASSES
 # the string keyword options are 'all', '__all__', '*'
 # if you would like to keep the type as an array, but still want to hit all forms, you can just set
 # index 0 as one of those keywords
-VALIDATE_ONLY_ON_SUBMIT = ["*"]
+VALIDATE_ONLY_ON_SUBMIT = []

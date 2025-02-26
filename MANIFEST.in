@@ -7,4 +7,4 @@ recursive-include formvalidator/static/dist *
 recursive-include formvalidator/templates *
 
 # Exclude the node_modules directory
-prune formvalidator/static/webpack/node_modules
+prune formvalidator/static/webpack *
