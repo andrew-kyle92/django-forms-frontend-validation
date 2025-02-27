@@ -19,13 +19,7 @@ formvalidator/views.py
 formvalidator/form_utils/__init__.py
 formvalidator/form_utils/form_utils.py
 formvalidator/migrations/__init__.py
-formvalidator/static/dist/forms.bundle.js
-formvalidator/static/webpack/package-lock.json
-formvalidator/static/webpack/package.json
-formvalidator/static/webpack/webpack.config.js
-formvalidator/static/webpack/src/css/style.css
-formvalidator/static/webpack/src/js/formFunctions.js
-formvalidator/static/webpack/src/js/index.js
+formvalidator/static/formvalidator/js/forms.bundle.js
 formvalidator/templates/base.html
 formvalidator/templates/formvalidator/sample.html
 formvalidator/templates/formvalidator/sample2.html

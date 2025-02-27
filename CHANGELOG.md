@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7] - 2025-02-27
+### Changed, Updated
+- Changed the path to where the webpack bundle is generated
+- Updated the manifest to the new static dir
+- Removed the old 'dist' directory
+- 
+
 ## [1.0.6] - 2025-02-26
 ### Updated
 - Updated the manifest to exclude the webpack files.

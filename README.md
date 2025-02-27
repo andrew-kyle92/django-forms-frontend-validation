@@ -21,7 +21,7 @@ The application is designed to streamline the process of form validation, ensuri
 ## Usage
 ### Installation
 1. Install the Django project
-    ```cmd
+    ```bash
    pip install django-frontend-forms-validation
    ```
 ### Setting Up
@@ -37,15 +37,17 @@ The application is designed to streamline the process of form validation, ensuri
       ```python
      from formvalidator.settings import * 
      
-     IGNORED_CLASSES = ['example-class', 'example-class-2', ...]
-      IGNORE_VALIDATION = ['example-ignore-validation', ...]
+     IGNORED_CLASSES = ['example-class', 'example-class-2', ...] #  replace these classes with your own
+      IGNORE_VALIDATION = ['example-ignore-validation', ...]  # replace these classes with your own
       VALIDATE_ONLY_ON_SUBMIT = ['all']  # Options: "__all__", specific class names, or leave empty.
+     # validate only on submit will only validate the inputs when the submit button is clicked
+     # leaving it the list blank will allow for validation to happen on focus-out/onblur of an input
       ```
 2. Initial Forms:
    - Ensure the `_InitializeForms` method is called during page load to attach validation logic to forms dynamically.
    To your HTML template with the form, add this.
    ```html
-   <script src="{% static 'dist/forms.bundle.js' %}"></script> 
+   <script src="{% static 'formsvalidator/js/forms.bundle.js' %}"></script> 
    <script>
     // fv (formsvalidator) is exported from forms.bundle.js
     window.addEventListener("load", () => {
@@ -61,6 +63,11 @@ The application is designed to streamline the process of form validation, ensuri
     });
    </script>
    ```
+   **Quick Note* - if your template is not finding `'formvalidator/js/forms.bundle.js'`, make sure either `STATICFILES_DIRS` is defined within your settings.py files, or if on production `STATIC_ROOT` is defined. If `STATIC_ROOT` is defined then make sure to run:
+    ```bash
+   ./manage.py collectstatic
+   ```
+
 3. Server-Side Context:
    - Use the `FormsValidator` class to pass configuration to templates:
    ```python

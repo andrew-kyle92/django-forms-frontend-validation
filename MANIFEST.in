@@ -3,8 +3,8 @@ include LICENSE
 include README.md
 
 # Include specific static and template files
-recursive-include formvalidator/static/dist *
+recursive-include formvalidator/static/formvalidator *
 recursive-include formvalidator/templates *
 
 # Exclude the node_modules directory
-prune formvalidator/static/webpack *
+prune formvalidator/static/webpack
