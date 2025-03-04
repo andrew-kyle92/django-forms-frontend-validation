@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-forms-frontend-validation',
-    version='1.0.7',
-    packages=find_packages(exclude=['core*']),
+    version='1.0.8',
+    packages=find_packages(".", exclude=['core', 'formvalidator/static/webpack']),
     include_package_data=True,
     license='MIT',  # Use the license that applies to your project
     description='A Django app for front-end form validation',
